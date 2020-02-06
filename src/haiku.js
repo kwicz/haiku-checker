@@ -51,53 +51,35 @@ HaikuLines.prototype.puncCheck = function () {
 HaikuLines.prototype.syllableCheck = function () {
   const values = Object.values(this);
   let presentVowelsTotal = [];
-  // For each line
-  // split lines into words
+  // For each object value
   for (let i = 0; i < values.length; i++) {
     let presentVowels = [];
+    // Turn line into an array of all letters in the line
     let lineLetters = values[i].toLowerCase().split("");
-    // let wordLetters = values[i].split("");
     const vowels = ["a", "e", "i", "o", "u", "y"];
+    // For each letter in the line, check it against vowels array
     lineLetters.forEach(function (lineLetter) {
       if (vowels.includes(lineLetter)) {
         presentVowels.push(lineLetter);
-      }
+      };
     });
-    presentVowelsTotal.push(presentVowels.length);
-  }
-  // for (let i = 0; i < values.length; i++)
-
-  //Count vowels in the word
-  // let presentVowels = word.includes(vowels);
-  // let vowelNumber = presentVowels.length;
+    // Rejoin the letters array back into the original line
+    let line = lineLetters.join("");
+    // count the number of es
+    
+    let words = line.split(" ");
+    let e = 0;
+    words.forEach(function (word) {
+      if (word[word.length-1] === "e") {
+        e++;
+      }; 
+    });
+    // Subtract number of exceptions from number of vowels present
+    let syllables = presentVowels.length - e;
+    console.log(syllables);
+    // Push number of syllables into present vowels array
+    presentVowelsTotal.push(syllables);
+  };
   console.log(presentVowelsTotal);
   return presentVowelsTotal;
-}
-
-
-
-  // values.forEach(function(value) {
-  //   let number = /\d+/;
-  //   let numberArray = value.match(number);
-
-
-// export function Row(row0, row1, row2, row3, row4, row5, row6, row7, row8) {
-//   this.row0 = row0;
-//   this.row1 = row1;
-//   this.row2 = row2;
-//   this.row3 = row3;
-//   this.row4 = row4;
-//   this.row5 = row5;
-//   this.row6 = row6;
-//   this.row7 = row7;
-//   this.row8 = row8;
-// } 
-// Row.prototype.rowCheck = function() {
-//   var total = this.row0 + this.row1 + this.row2 + this.row3 + this.row4 + this.row5 + this.row6 + this.row7 + this.row8;
-//   return total;
-// }
-
-// Row.prototype.checkDoubles = function() {
-//   var alicia = Object.values(Row);
-//   alicia.reduce(function(a, b){ return (a === b) ? a : NaN; });
-// }
+};
