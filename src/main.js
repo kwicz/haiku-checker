@@ -8,7 +8,7 @@ import './styles.css';
 // User-Logic
 
 $(document).ready(function () {
-	
+
 	// var board = new Rows
 
 });
