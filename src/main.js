@@ -1,3 +1,4 @@
+import { HaikuLines } from './haiku.js';	
 import './styles.css';
 import $ from 'jquery';
 import 'bootstrap';
@@ -9,6 +10,11 @@ import './styles.css';
 
 $(document).ready(function () {
 
-	// var board = new Rows
+	let line1 = $("#line1").val();
+	let line2 = $("#line2").val();
+	let line3 = $("#line3").val();
+	const haikuLines = new HaikuLines(line1, line2, line3);
+
+
 
 });

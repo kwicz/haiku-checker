@@ -57,16 +57,22 @@ HaikuLines.prototype.syllableCheck = function () {
     // Turn line into an array of all letters in the line
     let lineLetters = values[i].toLowerCase().split("");
     const vowels = ["a", "e", "i", "o", "u", "y"];
+    
+    
+    
     // For each letter in the line, check it against vowels array
-    lineLetters.forEach(function (lineLetter) {
-      if (vowels.includes(lineLetter)) {
-        presentVowels.push(lineLetter);
-      };
-    });
+    for (let i = 0; i < lineLetters.length; i++) {
+        if (vowels.includes(lineLetters[i])) {
+          if (!vowels.includes(lineLetters[i - 1])) {
+            presentVowels.push(lineLetters);
+          };
+        };
+    };
+    
+    
     // Rejoin the letters array back into the original line
     let line = lineLetters.join("");
     // count the number of es
-    
     let words = line.split(" ");
     let e = 0;
     words.forEach(function (word) {
@@ -76,10 +82,8 @@ HaikuLines.prototype.syllableCheck = function () {
     });
     // Subtract number of exceptions from number of vowels present
     let syllables = presentVowels.length - e;
-    console.log(syllables);
     // Push number of syllables into present vowels array
     presentVowelsTotal.push(syllables);
   };
-  console.log(presentVowelsTotal);
   return presentVowelsTotal;
 };

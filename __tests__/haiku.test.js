@@ -1,4 +1,4 @@
-import { HaikuLines, eCheck } from '../src/haiku.js/';
+import { HaikuLines } from '../src/haiku.js/';
 import { exportAllDeclaration, tsImportEqualsDeclaration } from '@babel/types';
 
   describe('Haiku', () => {
@@ -33,13 +33,17 @@ import { exportAllDeclaration, tsImportEqualsDeclaration } from '@babel/types';
     test('Input should return number of vowels', () => {
       let haikuLines = new HaikuLines("thermos", "seven", "eleven");
       expect(haikuLines.syllableCheck()).toEqual([2, 2, 3]);
-      // expect(haikuLines.line1.syllableCheck()).toEqual(2);
-      // expect(haikuLines.line2.syllableCheck()).toEqual(3);
     });
 
     test('Input should return number of vowels except "e" at the end of a word', () => {
-      let haikuLines = new HaikuLines("malice", "breathe", "lemon");
-      expect(haikuLines.syllableCheck()).toEqual([2,2,2])
-    }); 
+      let haikuLines = new HaikuLines("malice", "compute", "lemon");
+      expect(haikuLines.syllableCheck()).toEqual([2,2,2]);
+    });
+
+    test('Input should return number of vowels except "e" at the end of the word and the second vowel of a dipthong', () => {
+      let haikuLines = new HaikuLines("breathe", "cooper", "bamboozled");
+      expect(haikuLines.syllableCheck()).toEqual([1,2,3]);
+    });
+
   });
 
