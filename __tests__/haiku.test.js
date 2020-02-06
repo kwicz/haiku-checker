@@ -27,13 +27,12 @@ import { exportAllDeclaration, tsImportEqualsDeclaration } from '@babel/types';
     
     test('Input should succeed if recieving 3 nans', () => {
       let haikuLines = new HaikuLines("nan", "nan", "nan");
-      console.log(haikuLines)
       expect(haikuLines.puncCheck()).toEqual("success");
     });
 
     test('Input should return number of syllables', () => {
       let haikuLines = new HaikuLines("one", "seven", "eleven");
-      expect(haikuLines.line0.syllableCheck()).toEqual(1);
+      expect(haikuLines.syllableCheck()).toEqual(1);
       // expect(haikuLines.line1.syllableCheck()).toEqual(2);
       // expect(haikuLines.line2.syllableCheck()).toEqual(3);
     });

@@ -1,4 +1,5 @@
 import { arrayExpression } from "@babel/types";
+import { getChangedFilesForRoots } from "jest-changed-files";
 
 // Business-Logic
 
@@ -40,25 +41,35 @@ HaikuLines.prototype.puncCheck = function () {
     let intersection = badChars.filter(x => inputArray.includes(x));
 
     if (intersection.length > 0) {
-       result = "fail";
+      result = "fail";
     }
-  return result;
+    return result;
   };
 };
 
 // Check for number of syllables in a line
 HaikuLines.prototype.syllableCheck = function () {
-  
+  const values = Object.values(this);
+  let presentVowels = [];
   // For each line
   // split lines into words
-  var word = this.line0.split(" ");
-  word = word.tolower();
-  var vowels = [a, e, i, o, u, y];
+  for (let i = 0; i < values.length; i++) {
+    let lineLetters = values[i].toLowerCase().split("");
+    console.log(lineLetters);
+    // let wordLetters = values[i].split("");
+    const vowels = ["a", "e", "i", "o", "u", "y"];
+    lineLetters.forEach(function (lineLetter) {
+      if (vowels.includes(lineLetter)) {
+        presentVowels.push(lineLetter);
+      }
+    });
+  }
+  // for (let i = 0; i < values.length; i++)
 
   //Count vowels in the word
-  let presentVowels = word.match(vowels);
-  let vowelNumber = presentVowels.length;
-
+  // let presentVowels = word.includes(vowels);
+  // let vowelNumber = presentVowels.length;
+  return presentVowels.length;
 }
 
 
