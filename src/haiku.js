@@ -50,12 +50,12 @@ HaikuLines.prototype.puncCheck = function () {
 // Check for number of syllables in a line
 HaikuLines.prototype.syllableCheck = function () {
   const values = Object.values(this);
-  let presentVowels = [];
+  let presentVowelsTotal = [];
   // For each line
   // split lines into words
   for (let i = 0; i < values.length; i++) {
+    let presentVowels = [];
     let lineLetters = values[i].toLowerCase().split("");
-    console.log(lineLetters);
     // let wordLetters = values[i].split("");
     const vowels = ["a", "e", "i", "o", "u", "y"];
     lineLetters.forEach(function (lineLetter) {
@@ -63,13 +63,15 @@ HaikuLines.prototype.syllableCheck = function () {
         presentVowels.push(lineLetter);
       }
     });
+    presentVowelsTotal.push(presentVowels.length);
   }
   // for (let i = 0; i < values.length; i++)
 
   //Count vowels in the word
   // let presentVowels = word.includes(vowels);
   // let vowelNumber = presentVowels.length;
-  return presentVowels.length;
+  console.log(presentVowelsTotal);
+  return presentVowelsTotal;
 }
 
 
