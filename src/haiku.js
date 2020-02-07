@@ -87,3 +87,4 @@ HaikuLines.prototype.syllableCheck = function () {
   };
   return presentVowelsTotal;
 };
+
