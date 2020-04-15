@@ -2,16 +2,11 @@
 
 #### _A website that checks if a poem is a Haiku, Jan 2020_
 
-#### By _**kwicz Dana Luukko**_
-
-
-## Preview
-
-
+#### By _**K.Wicz & Dana Luukko**_
 
 ## Description
 
-_A webpage that takes user input in three seperate lines and checks to see if each line meets the criteria of a Haiku. The first line must be 5 syllables, the second line must be 7 syllables, and the 3rd line must be 5 syllables. _
+A webpage that takes user input in three seperate lines and checks to see if each line meets the criteria of a Haiku. The first line must be 5 syllables, the second line must be 7 syllables, and the 3rd line must be 5 syllables.
 
 ## Project Specifications
 
