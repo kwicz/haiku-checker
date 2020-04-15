@@ -39,18 +39,18 @@ _In Terminal:_
 * Navigate to where you want this application to be saved, i.e.:
 ```cd desktop```
 * Clone the file from GitHub with HTTPS
-```git clone https://github.com/kwicz/pizza-parlor.git```
+```git clone https://github.com/kwicz/haiku-checker.git```
 * Open file in your preferred text editor
-* On Mac: ```open -a {your text editor} pizza-parlor```
-* On Windows: ```pizza-parlor```
+* On Mac: ```open -a {your text editor} haiku-checker```
+* On Windows: ```haiku-checker```
 
 _Download Manually:_
 
-* Navigate to https://github.com/kwicz/pizza-parlor.
+* Navigate to https://github.com/kwicz/haiku-checker.
 * Click green "Clone or Download" button.
 * Click "Download ZIP".
 * Click downloaded file to unzip.
-* Open folder called "pizza-parlor".
+* Open folder called "haiku-checker".
 * Right click "index.html" and select your preferred browser or text editor.
 
 ## Known Bugs
@@ -59,7 +59,7 @@ _No known bugs at this time._
 
 ## Support and contact details
 
-_Have a bug or an issue with this application? [Open a new issue](https://github.com/kwicz/pizza-parlor/issues) here on GitHub._
+_Have a bug or an issue with this application? [Open a new issue](https://github.com/kwicz/haiku-checker/issues) here on GitHub._
 
 ## Technologies Used
 
